@@ -6,6 +6,8 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Document(collection = "posts")
 public class Post {
 
@@ -20,35 +22,46 @@ public class Post {
 
     private String post;
 
-    @Indexed(direction = IndexDirection.DESCENDING)
-    private int likes;
-
-    public Post(String userId,
-                String userName,
-                String post) {
-
-        this.userId = userId;
-        this.userName = userName;
-        this.post = post;
-    }
+    private List<String> likes;
 
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUserId() {
         return userId;
     }
 
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     public String getUserName() {
         return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPost() {
         return post;
     }
 
-    public int getLikes() {
+    public void setPost(String post) {
+        this.post = post;
+    }
+    
+
+    public List<String> getLikes() {
         return likes;
+    }
+
+    public void setLikes(List<String> likes) {
+        this.likes = likes;
     }
 }
