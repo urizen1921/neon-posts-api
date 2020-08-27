@@ -26,7 +26,7 @@ public class DBSeeder implements CommandLineRunner {
     public void run(String... args) throws Exception {
         this.postRepository.deleteAll();
         this.mongoTemplate.dropCollection(User.class);
-
+        /*
         Post post = new Post();
         User user = new User();
         user.setUserId("3122394");
@@ -67,6 +67,8 @@ public class DBSeeder implements CommandLineRunner {
         Collection<Post> initialPosts = Arrays.asList(post, post2, post3);
 
         this.postRepository.insert(initialPosts);
+
+         */
 
     }
 }
